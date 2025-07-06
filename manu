@@ -1,0 +1,167 @@
+Network Meta-Analysis of Cardiovascular Safety Comparing Gonadotropin-Releasing Hormone Antagonists and Agonists in Patients with Prostate Cancer
+
+Abstract
+Background: Prostate cancer, a prevalent malignancy in men, often requires androgen deprivation therapy (ADT) using gonadotropin-releasing hormone (GnRH) agonists (e.g., leuprolide, goserelin) or antagonists (e.g., degarelix) to suppress testosterone. Both approaches have raised cardiovascular (CV) safety concerns. GnRH agonists cause an initial testosterone surge, potentially elevating CV risk, while antagonists avoid this. This review compared the CV safety of GnRH agonists and antagonists in prostate cancer treatment
+Methods: A search of PubMed, Embase, and Web of Science up to March 2025 identified studies comparing GnRH antagonists and agonists, focusing on CV outcomes like myocardial infarction, stroke, and major adverse cardiovascular events (MACE). Data were extracted using Nested Knowledge software, and study quality was assessed with the Newcastle-Ottawa Scale. A frequentist NMA in R software calculated risk ratios (RRs) with 95% confidence intervals (CIs), evaluating consistency, heterogeneity, and bias.
+Results: Of 5,952 studies, 8 were included in the NMA (sample sizes: 101–24,846). Degarelix showed lower CV risk (RR: 0.62, 95% CI: 0.41–0.95; SUCRA: 0.69) compared to GnRH agonists. Antiandrogens ranked highest for CV safety (SUCRA: 0.79; RR: 0.50, 95% CI: 0.21–1.18), while goserelin ranked lowest (SUCRA: 0.25; RR: 1.00, 95% CI: 0.37–2.66). Leuprolide (SUCRA: 0.54; RR: 0.70, 95% CI: 0.35–1.43) and triptorelin (SUCRA: 0.52; RR: 0.72, 95% CI: 0.27–1.94) showed no significant CV risk differences. High inconsistency (Q = 46.67, p < 0.0001) and heterogeneity (I² = 89.7%) were noted, with minor publication bias per the funnel plot
+Conclusion: Degarelix demonstrated significantly lower CV risk compared to GnRH agonists, while antiandrogens suggested potential CV safety benefits, though not statistically significant. Among agonists, goserelin had the highest CV risk, followed by leuprolide and triptorelin, without notable differences. Large-scale randomized trials are needed to confirm these findings, considering patient-specific factors like baseline CV risk and comorbidities for personalized treatment decisions
+Key words: Network meta-analysis, Cardiovascular, Prostate Cancer, Gonadotropin-Releasing Hormone Antagonists and Agonists 
+
+
+
+ 
+Introduction
+Prostate cancer is a significant health concern, ranking as the second most common cancer among men worldwide, with over 1.4 million new cases reported in 2020 (1). For advanced cases, androgen deprivation therapy (ADT) is a standard treatment, reducing testosterone levels to slow tumor growth. Gonadotropin-releasing hormone (GnRH) agonists (e.g., leuprolide, goserelin) and antagonists (e.g., degarelix) are key ADT options, differing in their approach to testosterone suppression (2, 3). Agonists trigger an initial testosterone surge before achieving suppression, whereas antagonists block it immediately(4). Though effective against cancer, both therapies have raised concerns about cardiovascular safety(5).
+
+ADT’s cardiovascular risks emerged from studies linking it to increased rates of heart disease and stroke(6). Research indicates that ADT elevates fat mass, insulin resistance, and cholesterol levels—key triggers of heart problems(7). GnRH agonists may heighten this risk due to the initial testosterone flare, while antagonists like degarelix, which avoid this surge, could be safer(8). Early trials suggest degarelix is associated with fewer cardiovascular events than agonists in some patients, though findings vary across studies(9). Real-world data from diverse patient groups often yield conflicting results, complicating treatment decisions(10). Randomized trials, despite their rigor, frequently lack the scale or diversity to evaluate rare outcomes like heart attacks fully (11). In contrast, real-world evidence from databases and registries offers a broader perspective, capturing older patients or those with pre-existing heart conditions, common in prostate cancer(12). Yet, these studies face challenges such as bias and inconsistent reporting. Standard meta-analyses fall short by not comparing all treatments simultaneously (13, 14).  Network meta-analysis (NMA) overcomes this limitation by integrating direct and indirect evidence, enabling a comprehensive comparison of GnRH antagonists, agonists, and other therapies like antiandrogens.
+
+This NMA focuses on real-world studies to evaluate the risk of cardiovascular events, such as heart attacks, strokes, or heart failure, associated with GnRH antagonists versus agonists in prostate cancer patients. It aims to determine which therapy poses less risk, aiding doctors and patients in making informed decisions. By analyzing a network of treatments, it also ranks their safety and assesses consistency across studies. With prostate cancer affecting millions and ADT use widespread, understanding these risks is critical to balancing cancer control with patient safety
+Methods 
+This network meta-analysis (NMA) followed PRISMA-NMA guidelines. which is registered with the Prospera database 
+
+Eligibility Criteria
+Studies were included they compared gonadotropin-releasing hormone (GnRH) antagonists and agonists in prostate cancer, reported cardiovascular (CV) outcomes such as myocardial infarction, stroke, heart failure, or major adverse cardiovascular events (MACE), and involved androgen deprivation therapy (ADT). Excluded studies were non-English, lacked sufficient data, or were abstracts without full text (Table S2).
+Search Strategy
+"Searched PubMed, Embase, and Web of Science until March 2025 for 'prostate cancer,' 'GnRH antagonists,' 'GnRH agonists,' 'ADT,' and 'CV outcomes' using MeSH terms and keywords. Search terms: (('Prostatic Neoplasms'[MeSH] OR 'Prostate cancer*') AND ('Cardiovascular Diseases'[MeSH] OR 'cardiovascular disease*' OR 'Myocardial Infarction'[MeSH] OR 'Stroke'[MeSH] OR 'Heart Failure'[MeSH] OR 'major adverse cardiovascular event*')) AND ('Gonadotropin-Releasing Hormone'[MeSH] OR 'GnRH antagonist*' OR 'GnRH agonist*' OR 'Degarelix' OR 'Goserelin' OR 'Leuprolide'). Two reviewers worked independently; a third resolved disputes (Table S3).
+
+Screening and Data Extraction
+Studies were imported into the Nested Knowledge software, and duplicates were removed automatically. Two reviewers independently screened titles, abstracts, and full texts. Discrepancies were resolved through discussion or by consulting a senior reviewer. Data extraction was performed within Nested Knowledge, collecting details on study characteristics (author, year, design, sample size, follow-up duration), patient demographics (age, CV event, treatment details (GnRH antagonist/agonist type, ADT duration), and cardiovascular outcomes (myocardial infarction, stroke, heart failure, MACE). Two reviewers independently extracted data, resolving discrepancies using the software’s reconciliation tools
+Quality Assessment
+The Newcastle-Ottawa Scale (NOS) evaluates non-randomized studies based on selection, comparability, and outcome/exposure. Selection (0–4) assesses group definition, appropriateness, and representativeness. Comparability (0–2) checks for confounding control. Outcome/exposure (0–3) evaluates assessment reliability and follow-up adequacy. Scores range from 0 to 9, with higher scores indicating better quality(15).
+Statistical Analysis
+A frequentist network meta-analysis was conducted using a random-effects model in netmeta (R version 4.4.3). Pairwise and network analyses reported pooled risk ratios (RR) with 95% confidence intervals (CIs). Consistency was assessed with the global approach, node-splitting used the local approach, and heterogeneity was evaluated with the Cochrane Q test. Publication bias was examined using funnel plots.
+Results 
+A total of 5,952 records were initially identified from databases, including Embase (1,912), PubMed (321), and Web of Science (3,719). After removing 1,545 duplicates, 4,407 records were screened. Following the screening, 3,789 records were excluded. 618 reports were requested for retrieval, all of which were successfully obtained. Upon reviewing the full-text articles, 610 were excluded due to reasons such as being reviews, lacking a relevant population, or not addressing the required outcomes. In the end, 8 studies met the eligibility criteria and were included in the network meta-analysis (Figure 1).
+Demographic and Clinical Characteristics of the Study Cohort
+The table 1 includes 8 retrospective cohort studies conducted across different countries: Taiwan (2 studies), the UK (1 study), Canada (1 study), the USA (1 study), Italy (1 study), and France (1 study), with study durations ranging from 3 to 12 years. The exposure groups consisted of treatments such as D, GnRHa, L, G, and Tr, with various comparator groups. Participants had a median or mean age ranging from 73.4 to 76.9 years, and follow-up durations varied from 0.19 to 3.3 years. Some studies, like those conducted in Canada and France, included large sample sizes, such as 10,201 and 24,846 participants, respectively, providing significant data for the analysis.
+ Network meta-analysis
+Geometry of NMA
+The graphical network plots illustrate the eligible comparisons, depicting the cardiovascular safety profiles of GnRH antagonists and agonists in prostate cancer patients (Figure 2).
+Comparative Cardiovascular Risk of GnRH Agonists vs. Antagonists in Prostate Cancer Treatment
+The network meta-analysis compares the risk of cardiovascular disease among different ADTs versus GnRH agonists. Degarelix (SUCRA: 0.69) showed a significantly lower risk (RR: 0.62, 95% CI: 0.41–0.95), suggesting better cardiovascular safety. Antiandrogens (SUCRA: 0.79) had the highest probability of being the safest (RR: 0.50, 95% CI: 0.21–1.18), though not statistically significant. Goserelin (SUCRA: 0.25, RR: 1.00, 95% CI: 0.37–2.66) ranked the lowest, indicating the highest cardiovascular risk. Leuprolide (SUCRA: 0.54, RR: 0.70, 95% CI: 0.35–1.43) and triptorelin (SUCRA: 0.52, RR: 0.72, 95% CI: 0.27–1.94) showed no significant differences in cardiovascular risk compared to GnRH agonists. Overall, antiandrogens appeared to be the safest option, while goserelin had the highest cardiovascular risk (Figure 3).
+Global and Local Consistency Analysis
+The global consistency analysis showed significant inconsistency (Q = 46.67, df = 6, p < 0.0001), mainly within (Q = 38.80, df = 4, p < 0.0001) and between study designs (Q = 7.87, df = 2, p = 0.0195). The GnRHa vs. Degarelix comparison had the highest inconsistency (Q = 38.76, df = 3, p < 0.0001), while Degarelix vs. Leuprolide was consistent (Q = 0.04, df = 1, p = 0.8450). Removing Degarelix vs. Leuprolide had little effect (Q = 0.21, df = 1, p = 0.6494), but excluding GnRHa vs. Degarelix reduced inconsistency (Q = 7.66, df = 1, p = 0.0056), marking it as a key source of heterogeneity.
+The local consistency analysis showed that Degarelix vs. GnRHa (I² = 89.7%) had a lower cardiovascular risk (RR = 0.62, 95% CI: 0.41–0.95) with consistent estimates. However, Degarelix vs. Goserelin showed inconsistencies between direct (RR = 0.36, 95% CI: 0.12–1.09) and indirect (RR = 1.63, 95% CI: 0.38–7.05) estimates. Goserelin vs. Leuprolide (I² = 0.89) also had inconsistencies between direct (RR = 1.13, 95% CI: 0.44–2.91) and indirect (RR = 1.42, 95% CI: 0.33–6.18) estimates, similar to Goserelin vs. Triptorelin (RR = 1.38, 95% CI: 0.58–3.29). In contrast, Leuprolide vs. GnRHa (RR = 0.70, 95% CI: 0.35–1.43) and Triptorelin vs. GnRHa (RR = 0.72, 95% CI: 0.27–1.94) showed no significant differences. While Degarelix vs. GnRHa was consistent, Degarelix vs. Goserelin and Goserelin vs. Leuprolide showed potential inconsistencies (Figure 4).
+Publication bias
+Moderate symmetry indicates minimal publication bias, though slight asymmetry is seen in smaller studies. Degarelix vs. GnRHa shows tightly clustered effects (consistent precision), while Antiandrogen vs. Degarelix/GnRHa displays variability, suggesting heterogeneity or limited sample sizes. Goserelin-related comparisons (e.g., vs. Leuprolide/Triptorelin) exhibit scattered results, reflecting low precision. Gaps in data for certain pairs (e.g., Antiandrogen vs. GnRHa) imply potential missing studies. Larger studies demonstrate stable estimates, while smaller ones show greater variability (Figure 5)
+Discussion
+This network meta-analysis (NMA) assesses the cardiovascular safety of GnRH antagonists and agonists in prostate cancer patients on androgen deprivation therapy (ADT), using data from eight retrospective cohort studies. Degarelix, a GnRH antagonist, showed a lower cardiovascular event risk compared to agonists (RR: 0.62, 95% CI: 0.41–0.95), with a SUCRA of 0.69. Antiandrogens ranked highest for safety (SUCRA: 0.79), though not significant (RR: 0.50, 95% CI: 0.21–1.18), while goserelin ranked lowest (SUCRA: 0.25), indicating higher risk. This supports the idea that antagonists’ lack of testosterone surge may reduce cardiovascular strain. Yet, significant inconsistency (Q = 46.67, p < 0.0001), especially in GnRHa vs. degarelix (Q = 38.76, p < 0.0001), and variable estimates (e.g., degarelix vs. goserelin) suggest heterogeneity in study design and populations.
+ Compared with previous studies, our NMA suggests degarelix, a GnRH antagonist, lowers cardiovascular risk in prostate cancer patients compared to agonists (RR: 0.62, 95% CI: 0.41–0.95), with a high safety ranking (SUCRA: 0.69), while goserelin ranks lowest (SUCRA: 0.25). Conversely, Savan Patel et al, 2024 (16). found degarelix raises MACE risk (RR: 1.31, 95% CI: 1.14–1.51), particularly in patients with prior heart disease, directly opposing our results within prostate cancer. In reproductive medicine, Bodri et al, 2011 (17) and Xiao et al, 2012(18) report that antagonists reduce OHSS risk in oocyte donors (RR: 0.62, non-significant) and PCOS IVF patients (OR: 0.36, significant), respectively—a safety advantage unrelated to our CV focus. This highlights GnRH safety’s sharp contextual divide: cardiovascular risks in prostate cancer versus OHSS in reproduction.
+Sofiyeva et al. 2019 (19) and Lingli Xin et al, 2023 (20) further differ, noting menopausal symptoms (hot flashes, vaginal dryness) and injection site reactions in fertility preservation and endometriosis, with Xin adding dose-dependent bone density risks for antagonists. Unlike our NMA’s agonist-antagonist comparison, neither study contrasts the two, and their female-focused adverse events diverge from our male CV perspective and Patel’s findings (16). Our NMA’s network approach (8 studies) differs from Patel’s bias-affected real-world data and Bodri/Xiao’s precise RCTs, while high heterogeneity (e.g., NMA Q = 46.67, Sofiyeva I² = 83.3%) indicates variability across studies. This suggests antagonists may prevent OHSS in reproductive contexts but have unclear CV risks in prostate cancer, with menopausal symptoms a recurring issue in women, emphasizing the need for context-tailored safety evaluations.
+This NMA draws strength from integrating eight retrospective cohort studies across diverse regions, including Taiwan, the UK, Canada, the USA, Italy, and France, ensuring a broad representation of patient populations and clinical practices. By employing a network approach, it simultaneously compares multiple treatments—degarelix, goserelin, leuprolide, triptorelin, and antiandrogens—providing safety rankings via SUCRA (e.g., degarelix: 0.69, antiandrogens: 0.79) based on an extensive dataset of 5,952 records. Adhering to PRISMA-NMA guidelines, the study conducted a systematic search in PubMed, Embase, and Web of Science, with independent screening and data extraction using Nested Knowledge software to enhance reliability. Frequentist analysis in R, incorporating consistency checks and funnel plots, reinforces the validity of findings, particularly regarding degarelix’s lower cardiovascular risk (RR: 0.62, 95% CI: 0.41–0.95). This comparative framework strengthens its relevance for clinical decision-making and future research on ADT safety in prostate cancer.
+This network meta-analysis (NMA) has notable limitations due to its reliance on eight retrospective cohort studies, which, while reflective of real-world conditions, introduce risks of confounding factors such as unadjusted comorbidities and treatment durations. Variability in sample sizes (101 to 24,846 participants) and follow-up periods (0.19 to 3.3 years) affects reliability, particularly for rare cardiovascular events. Significant heterogeneity (Q = 46.67, p < 0.0001), especially in the GnRHa vs. degarelix comparison, reduces confidence in pooled results. The absence of randomized controlled trials (RCTs) limits causal inference, and moderate publication bias suggests potential underrepresentation of negative findings. Additionally, the review process, despite following PRISMA-NMA guidelines, was restricted to English-language studies from select databases, increasing the risk of missing relevant data. The use of a fixed-effects model may have underestimated variability given the high heterogeneity (I² = 89.7% in some comparisons). Data extraction and quality assessment, reliant on two reviewers using Nested Knowledge software, involved subjective judgments that could introduce bias. The exclusion of studies lacking full text or comprehensive cardiovascular outcome data further narrows the evidence base, potentially limiting the scope of indirect comparisons.
+The findings of this NMA have important implications for clinical practice, policy, and future research. Clinically, the results suggest that GnRH antagonists, particularly degarelix, may offer a lower cardiovascular risk compared to agonists, making them a potentially safer choice for patients with pre-existing cardiovascular disease. However, given the inconsistencies in findings, individualized treatment decisions remain crucial, considering factors such as cancer stage, comorbidities, and patient preferences. From a policy perspective, these findings highlight the need to update clinical guidelines to incorporate cardiovascular risk stratification when prescribing androgen deprivation therapy (ADT). Organizations like the European Association of Urology (EAU) and the American Urological Association (AUA) may need to revise their recommendations to prioritize GnRH antagonists for high-risk patients. Additionally, insurance policies and healthcare reimbursement structures should be adjusted to ensure equal access to these treatments. Future research should focus on conducting large-scale RCTs to confirm cardiovascular differences between GnRH agonists and antagonists, as well as long-term follow-up studies to determine whether these differences persist over time. Further subgroup analyses should explore cardiovascular risks in specific populations, such as patients with diabetes or metabolic syndrome, while real-world data from electronic health records and AI-driven models could improve risk prediction and treatment optimization. Finally, comparative cost-effectiveness studies are needed to assess whether the higher cost of antagonists is justified by their potential cardiovascular benefits, particularly in publicly funded healthcare systems.
+ 
+Reference
+
+1.	Wang L, Lu B, He M, Wang Y, Wang Z, Du L. Prostate cancer incidence and mortality: global status and temporal trends in 89 countries from 2000 to 2019. Frontiers in public health. 2022;10:811044.
+2.	Shore N, Abrahamsson P-A, Anderson J, Crawford E, Lange P. New considerations for ADT in advanced prostate cancer and the emerging role of GnRH antagonists. Prostate cancer and prostatic diseases. 2013;16(1):7-15.
+3.	Schröder F, Crawford E, Axcrona K, Payne H, Keane T. Androgen deprivation therapy: past, present and future. BJU international. 2012;109:1-12.
+4.	Van Poppel H, Nilsson S. Testosterone surge: rationale for gonadotropin-releasing hormone blockers? Urology. 2008;71(6):1001-6.
+5.	Herrmann J. Vascular toxic effects of cancer therapies. Nature Reviews Cardiology. 2020;17(8):503-22.
+6.	Levine GN, D'Amico AV, Berger P, Clark PE, Eckel RH, Keating NL, et al. Androgen-deprivation therapy in prostate cancer and cardiovascular risk: a science advisory from the American Heart Association, American Cancer Society, and American Urological Association: endorsed by the American Society for Radiation Oncology. Circulation. 2010;121(6):833-40.
+7.	Kintzel PE, Chase SL, Schultz LM, O'Rourke TJ. Increased risk of metabolic syndrome, diabetes mellitus, and cardiovascular disease in men receiving androgen deprivation therapy for prostate cancer. Pharmacotherapy: The Journal of Human Pharmacology and Drug Therapy. 2008;28(12):1511-22.
+8.	Freedland SJ, Abrahamsson P-A. Androgen deprivation therapy and side effects: are GnRH antagonists safer? Asian Journal of Andrology. 2021;23(1):3-10.
+9.	Smith MR, Klotz L, van der Meulen E, Colli E, Tankó LB. Gonadotropin-releasing hormone blockers and cardiovascular disease risk: analysis of prospective clinical trials of degarelix. The Journal of urology. 2011;186(5):1835-42.
+10.	Garrison Jr LP, Neumann PJ, Erickson P, Marshall D, Mullins CD. Using real‐world data for coverage and payment decisions: the ISPOR real‐world data task force report. Value in health. 2007;10(5):326-35.
+11.	Nallamothu BK, Hayward RA, Bates ER. Beyond the randomized clinical trial: the role of effectiveness studies in evaluating cardiovascular therapies. Circulation. 2008;118(12):1294-303.
+12.	Kokkotou E, Anagnostakis M, Evangelou G, Syrigos NK, Gkiozos I. Real-world data and evidence in lung cancer: A review of recent developments. Cancers. 2024;16(7):1414.
+13.	Sterne JA, Egger M, Smith GD. Investigating and dealing with publication and other biases in meta-analysis. Bmj. 2001;323(7304):101-5.
+14.	Page MJ, Sterne JA, Higgins JP, Egger M. Investigating and dealing with publication bias and other reporting biases in meta‐analyses of health research: A review. Research synthesis methods. 2021;12(2):248-59.
+15.	Hartling L, Milne A, Hamm MP, Vandermeer B, Ansari M, Tsertsvadze A, Dryden DM. Testing the Newcastle Ottawa Scale showed low reliability between individual reviewers. Journal of clinical epidemiology. 2013;66(9):982-93.
+16.	Patel S, Zhu K, Dave CV, Ghajar M, Zhang Y, Saraiya B, et al. Comparative cardiovascular safety of gonadotropin-releasing hormone antagonists and agonists among patients diagnosed with prostate cancer: a systematic review and meta-analysis of real-world evidence studies. European Urology Oncology. 2024.
+17.	Bodri D, Sunkara SK, Coomarasamy A. Gonadotropin-releasing hormone agonists versus antagonists for controlled ovarian hyperstimulation in oocyte donors: a systematic review and meta-analysis. Fertility and sterility. 2011;95(1):164-9.
+18.	Xiao J, Chang S, Chen S. The effectiveness of gonadotropin-releasing hormone antagonist in poor ovarian responders undergoing in vitro fertilization: a systematic review and meta-analysis. Fertility and sterility. 2013;100(6):1594-601. e9.
+19.	Sofiyeva N, Siepmann T, Barlinn K, Seli E, Ata B. Gonadotropin-releasing hormone analogs for gonadal protection during gonadotoxic chemotherapy: a systematic review and meta-analysis. Reproductive Sciences. 2019;26(7):939-53.
+20.	Xin L, Ma Y, Ye M, Chen L, Liu F, Hou Q. Efficacy and safety of oral gonadotropin-releasing hormone antagonists in moderate-to-severe endometriosis-associated pain: a systematic review and network meta-analysis. Archives of gynecology and obstetrics. 2023;308(4):1047-56.
+21.	Chen DY, Su PJ, See LC, Liu JR, Chuang CK, Pang ST, et al. Gonadotropin‐releasing hormone antagonist associated with lower cardiovascular risk compared with gonadotropin‐releasing hormone agonist in prostate cancer: A nationwide cohort and in vitro study. The Prostate. 2021;81(12):902-12.
+22.	Davey P, Kirby MG. Cardiovascular risk profiles of GnRH agonists and antagonists: real-world analysis from UK general practice. World Journal of Urology. 2021;39:307-15.
+23.	Dragomir A, Touma N, Hu J, Perreault S, Aprikian AG. Androgen deprivation therapy and risk of cardiovascular disease in patients with prostate cancer based on existence of cardiovascular risk. Journal of the National Comprehensive Cancer Network. 2023;21(2):163-71.
+24.	Merola D, Schneeweiss S, Sreedhara SK, Zabotka LE, Quinto K, Concato J, Wang SV. Real-world evidence prediction of a phase IV oncology trial: comparative degarelix vs leuprolide safety. JNCI Cancer Spectrum. 2022;6(4):pkac049.
+25.	Perrone V, Degli Esposti L, Giacomini E, Veronesi C, Blini V, Oderda M. Cardiovascular risk profile in prostate cancer patients treated with GnRH agonists versus antagonists: an Italian real-world analysis. Therapeutics and clinical risk management. 2020:393-401.
+26.	Scailteux L-M, Vincendeau S, Balusson F, Leclercq C, Happe A, Le Nautout B, et al. Androgen deprivation therapy and cardiovascular risk: No meaningful difference between GnRH antagonist and agonists—a nationwide population-based cohort study based on 2010–2013 French Health Insurance data. European journal of cancer. 2017;77:99-108.
+27.	Shao Y-HJ, Hong J-H, Chen C-K, Huang C-Y. Cardiovascular risk of gonadotropin-releasing hormone antagonist versus agonist in men with prostate cancer: an observational study in Taiwan. Prostate Cancer and Prostatic Diseases. 2023;26(4):722-9.
+28.	Wallach JD, Deng Y, McCoy RG, Dhruva SS, Herrin J, Berkowitz A, et al. Real-world cardiovascular outcomes associated with degarelix vs leuprolide for prostate cancer treatment. JAMA network open. 2021;4(10):e2130587-e.
+
+ 
+Table and Figure legends
+Table 1. Demographic and Clinical Characteristics of the Study Cohort
+
+Figure 1. PRISMA Flowchart of Study Inclusion and Exclusion in the Systematic Review
+
+Figure 2. Schematic Representation of Network Meta-Analysis (NMA) Treatment Comparisons
+
+Figure 3. Forest Plot Comparing Cardiovascular Risk Outcomes of GnRH Agonists vs. Antagonists 
+in Prostate Cancer Patients
+
+Figure 4. Node-Split Analysis Forest Plot Evaluating Consistency in Network Meta-Analysis Results
+
+Figure 5. Funnel Plot Assessing Publication Bias Across Included Studies in the Meta-Analysis
+
+Supplementary files
+Figure S1: Publication bias of urosepsis 
+Table S1. PRISMA Checklist 
+Table S2. Inclusion and Exclusion Criteria
+Table S3. As per the searched electronic databases
+Table S4: Newcastle-Ottawa Scale 
+
+ 
+Table 1: Demographic and Clinical Characteristics of the Study Cohort
+Study	Study design 	Duration of study 	Country	Exposure 	Comparator	Median/mean age (yr) 	Median/mean follow-up (yr) 	Primary endpoints
+Chen_2021(21)
+Retrospective  active cohort study 	2015–2018	Taiwan	D (n = 666) 	GnRHa (n = 1332) 	D: 76 
+GnRHa: 76 	Mean: 1.21	 MACE
+Davey_2021(22)
+Retrospective cohort study	2010–2017	UK	D (n = 101) 	L (n = 3289) 
+G (n = 4366) 
+Tr (n = 1325)	D: 74.8 
+L: 75.9 
+G: 74.0 
+Tr: 75.3	D: 74.8 L: 75.9 G: 74.0 Tr: 75.3	Any cardiac event
+Dragomir_2023(23) 
+Retrospective cohort study	2012–2016	Canada	D (n = 584) 	GnRHa (n = 10 201)	D: 73.4
+GnRHa: 74.7 	NA	Composite CVD
+Merola_2022(24)
+Retrospective cohort study	2008–2020 	USA	D (n = 1887) 	L (n = 1887)	D: 76.2 
+L: 76.2	D: 0.19 
+L: 0.24	Composite myocardial infarction and stroke
+Perrone_2020(25)
+Retrospective cohort study	2013–2016	Italy	D (n = 627) 	GnRHa (n = 9158)	D: 74.8 
+GnRHa: 76.9	Overall: 3.3	CV Events
+Scailteux_2017(26)
+Retrospective cohort study	2010–2013	France	D (n = 1273) 	GnRHa (n = 24 846)	D: 74 
+GnRHa: 75	D: 0.73 
+GnRHa: 2.1	Incidence of ischaemic events
+Shao_2022 (27)
+Retrospective cohort study	2015–2019	Taiwan	D (n = 499) 	GnRHa (n = 15 127)	D 75: 51.3% GnRHa 75: 47.6%	NR	Composite CV events
+Wallach_2021(28)
+Retrospective study	2008–2019	USA	D (n = 1113) 	L (n = 1113)	D: 75.1
+L: 75.0	Overall: 0.67	 MACE
+Abbreviation: MACE = major adverse cardiovascular event (ischemic heart disease, stroke, congestive heart failure, or all cause deaths),
+Composite CV events (ischemic heart disease, stroke, congestive heart failure, or CV deaths)
+D = degarelix; G = goserelin; GnRHa = gonadotropin-releasing hormone agonists; L = leuprolide; Tr = triptorelin
+CVD agg = aggregate CVD 
+ 
+Figure 1. PRISMA Flowchart of Study Inclusion and Exclusion in the Systematic Review
+ 
+ 
+Figure 2. Schematic Representation of Network Meta-Analysis (NMA) Treatment Comparisons
+
+
+ 
+ 
+Figure 3. Forest Plot Comparing Cardiovascular Risk Outcomes of GnRH Agonists vs. Antagonists in Prostate Cancer Patients
+
+
+
+
+
+ 
+
+ 
+Figure 4. Node-Split Analysis Forest Plot Evaluating Consistency in Network Meta-Analysis Results
+ 
+Figure 5. Funnel Plot Assessing Publication Bias Across Included Studies in the Meta-Analysis
+
+
+
